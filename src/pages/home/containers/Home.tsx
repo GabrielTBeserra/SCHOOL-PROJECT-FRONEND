@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 import { useGet } from 'src/common/hooks/useFetch';
 
@@ -7,7 +7,6 @@ const containers: FC = () => {
 
   const asdasd = () => {
     forceGet();
-    console.log(lista);
   };
 
   return (
