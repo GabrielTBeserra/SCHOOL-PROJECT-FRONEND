@@ -3,6 +3,7 @@ import * as types from './auth.actionsTypes';
 
 const initialState = Immutable({
   isLogged: true,
+  User: undefined,
 });
 
 type ActionType = {

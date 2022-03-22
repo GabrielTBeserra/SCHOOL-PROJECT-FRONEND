@@ -1,15 +1,15 @@
 import IRoute from 'src/common/types/route/IRoute';
 
-import Profile from './containers/Profile';
+import Login from './login/Login';
 
 const routes: IRoute = {
-  basePath: '/',
+  basePath: '/auth',
   routes: [
     {
-      component: Profile,
-      path: '/profile',
+      component: Login,
+      path: 'login',
       exact: true,
-      needAuth: true,
+      needAuth: false,
     },
   ],
 };

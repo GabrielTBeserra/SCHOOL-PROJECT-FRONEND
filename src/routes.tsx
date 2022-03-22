@@ -8,21 +8,23 @@ export default function Routes() {
   return (
     <Switch>
       {routes.map((route: IRoute, index) => (
-        route.needAuth ? (
-          <AuthenticatedRoute
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-          />
-        ) : (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-          />
-        )
+        route.routes.map((r) => (
+          r.needAuth ? (
+            <AuthenticatedRoute
+              key={index}
+              path={`${route.basePath}/${r.path}`}
+              exact={r.exact}
+              component={r.component}
+            />
+          ) : (
+            <Route
+              key={index}
+              path={`${route.basePath}/${r.path}`}
+              exact={r.exact}
+              component={r.component}
+            />
+          )
+        ))
       ))}
     </Switch>
   );
